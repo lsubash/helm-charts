@@ -410,10 +410,6 @@ entries:
   - apiVersion: v2
     appVersion: v4.2.0-Beta
     created: "2022-03-16T04:43:25.286549546-07:00"
-    dependencies:
-    - name: factory
-      repository: file://../../lib/factory/
-      version: 4.2.0-Beta
     description: A Helm chart for Installing ISecL-DC Trust Agent
     digest: dcc4d66a01e6ffa2cc9c75e7c59355188b13eb6b0af248a3f7686c2cce69ec3b
     name: trustagent
