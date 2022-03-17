@@ -400,7 +400,7 @@ entries:
       version: 4.2.0
     description: A Helm chart for creating TLS certificates and updating config for
       NATS
-    digest: e4c751d0bbe87cd0ea721c96a32fa5b2a73d624f0a6e24c91a046fa3ef3f8f56
+    digest: 2fdcc40581bc2efe3ed9d9ffd9afa51a6c9e9897e7ef4f99b0dd692c0a4142e8
     name: nats-init
     type: application
     urls:
