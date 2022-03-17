@@ -234,7 +234,7 @@ entries:
       version: 4.2.0
     description: A Helm chart for bootstrapping default users and roles and fetching
       jwt token from Authentication & Authorization Service
-    digest: 5d8b1f2f1ddab84bfd1d0eb26d790b2dc1855549d0616bc1e9c18ed600302019
+    digest: 2fdcc40581bc2efe3ed9d9ffd9afa51a6c9e9897e7ef4f99b0dd692c0a4142e8
     name: aas-manager
     type: application
     urls:
