@@ -1,0 +1,49 @@
+{{- include "factory.headers" . }}
+---
+{{- include "factory.deploymentCommonSpec" . }}
+    spec:
+      {{- if .Values.global }}
+      {{- if .Values.global.image.imagePullSecret }}
+      imagePullSecrets:
+      - name: {{ .Values.global.image.imagePullSecret }}
+      {{- end }}
+      {{- else }}
+      {{- if .Values.image.svc.imagePullSecret }}
+      imagePullSecrets:
+      - name: {{ .Values.image.svc.imagePullSecret }}
+      {{- end }}
+      {{- end }}
+      serviceAccountName: {{ include "factory.name" . }}
+      securityContext:
+        {{- toYaml .Values.securityContext.init | nindent 8 }}
+      initContainers:
+        {{- include "factory.initCommonSpecLinkServiceVolumes" . | nindent 8 }}
+          securityContext:
+          {{- toYaml .Values.securityContext.iseclController | nindent 12 }}
+          volumeMounts:
+          {{- include "factory.volumeMountsBasePv" . | nindent 12 }}
+      tolerations:
+        {{- include "factory.tolerations" . | indent 8 }}
+      affinity:
+        {{- include "factory.affinityExtensions" . | nindent 8 }}
+      containers:
+        - name: {{ include "factory.name" . }}
+          {{- include "factory.imageContainer" . | indent 10 }}
+          securityContext:
+            {{- toYaml .Values.securityContext.iseclController | nindent 12 }}
+          env:
+            - name: TAINT_UNTRUSTED_NODES
+              value: "{{ .Values.nodeTainting.taintUntrustedNode }}"
+            - name: LOG_LEVEL
+              value: "INFO"
+            - name: TAG_PREFIX
+              value: "isecl."
+            - name: TAINT_REGISTERED_NODES
+              value: "{{ .Values.nodeTainting.taintRegisteredNodes }}"
+            - name: TAINT_REBOOTED_NODES
+              value: "{{ .Values.nodeTainting.taintRebootedNodes }}"
+          volumeMounts:
+            {{- include "factory.volumeMountSvcLogs" . | nindent 12 }}
+      volumes:
+        {{- include "factory.volumeSvcLogs" . | nindent 8 }}
+        {{- include "factory.volumesBasePV" . | nindent 8}}

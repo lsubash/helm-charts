@@ -1,0 +1,112 @@
+{{- include "factory.headers" . }}
+---
+{{- include "factory.deploymentCommonSpec" . }}
+    spec:
+      {{- if .Values.global }}
+      {{- if .Values.global.image.imagePullSecret }}
+      imagePullSecrets:
+      - name: {{ .Values.global.image.imagePullSecret }}
+      {{- end }}
+      {{- else }}
+      {{- if .Values.image.svc.imagePullSecret }}
+      imagePullSecrets:
+      - name: {{ .Values.image.svc.imagePullSecret }}
+      {{- end }}
+      {{- end }}
+      securityContext:
+        {{- toYaml .Values.securityContext.init | nindent 8 }}
+      serviceAccountName: {{ include "factory.name" . }}
+      initContainers:
+        {{- if .Values.dependentServices.hvs }}
+        - name: wait-for-hvs
+          {{- include "factory.imageInitContainer" . | indent 10 }}
+          env:
+            {{- if .Values.global }}
+              {{- if .Values.global.proxyEnabled }}
+              {{- include "factory.globalProxy" . | nindent 12 }}
+              {{- end }}
+            {{- end }}
+            - name: URL
+              {{- if .Values.global }}
+              value: {{ .Values.global.hvsUrl }}/version
+              {{- else }}
+              value: https://{{ .Values.dependentServices.hvs }}.{{ .Release.Namespace }}.svc.cluster.local:{{ .Values.service.hvs.containerPort }}/hvs/v2/version
+              {{- end }}
+            - name: VERSION
+              value: {{ .Chart.AppVersion }}         
+            - name: DEPEDENT_SERVICE_NAME
+              value: {{.Values.dependentServices.hvs }}
+            - name: COMPONENT
+              value: {{ include "factory.name" . }}
+        {{- end}}
+        {{- if .Values.dependentServices.shvs }}
+        - name: wait-for-shvs
+          {{- include "factory.imageInitContainer" . | indent 10 }}
+          env:
+            {{- if .Values.global }}
+              {{- if .Values.global.proxyEnabled }}
+              {{- include "factory.globalProxy" . | nindent 12 }}
+              {{- end }}
+            {{- end }}
+            - name: URL
+              {{- if .Values.global }}
+              value: {{ .Values.global.shvsUrl }}/version
+              {{- else }}
+              value: https://{{ .Values.dependentServices.shvs }}.{{ .Release.Namespace }}.svc.cluster.local:{{ .Values.service.shvs.containerPort }}/sgx-hvs/v2/version
+              {{- end }}
+            - name: VERSION
+              value: {{ .Chart.AppVersion }}         
+            - name: DEPEDENT_SERVICE_NAME
+              value: {{.Values.dependentServices.shvs }}
+            - name: COMPONENT
+              value: {{ include "factory.name" . }}
+        {{- end}}
+        {{- include "factory.initWaitForCmsSha384BearerToken" . | nindent 8 }}
+        {{- include "factory.initCommonSpecLinkServiceVolumes" . | nindent 8 }}
+          securityContext:
+            {{- toYaml .Values.securityContext.ihub | nindent 12 }}
+          volumeMounts:
+            {{- include "factory.volumeMountsBasePv" . | nindent 12 }}
+        {{- if .Values.global }}
+        {{- if .Values.global.versionUpgrade }}
+        {{- include "factory.waitForUpgradeService" . | nindent 8 }}
+          securityContext:
+            {{- toYaml .Values.securityContext.ihub | nindent 12 }}
+        {{- end}}
+        {{- else}}
+        {{- if .Values.versionUpgrade }}
+        {{- include "factory.waitForUpgradeService" . | nindent 8 }}
+          securityContext:
+            {{- toYaml .Values.securityContext.ihub | nindent 12 }}
+        {{- end }}
+        {{- end }}
+      {{- include "factory.hostAliases" . | nindent 6 }}
+      containers:
+        - name: {{ include "factory.name" . }}
+          {{- include "factory.imageContainer" . | indent 10 }}
+          securityContext:
+             {{- toYaml .Values.securityContext.ihub | nindent 12 }}
+          env:
+            {{- if .Values.global }}
+              {{- if .Values.global.proxyEnabled }}
+              {{- include "factory.globalProxy" . | nindent 12 }}
+              {{- end }}
+            {{- end }}
+            {{- include "factory.envCmsSha384" . | nindent 12 }}
+          envFrom:
+            - configMapRef:
+                name: {{ include "factory.name" . }}
+          readinessProbe:
+            {{- include "factory.probeReadiness" . | nindent 12 }}
+          volumeMounts:
+            {{- include "factory.volumeMountSvcConfig" . | nindent 12 }}
+            {{- include "factory.volumeMountSvcLogs" . | nindent 12 }}
+            {{- include "factory.volumeMountSecrets" . | nindent 12 }}
+      volumes:
+        {{- include "factory.volumeSvcConfig" . | nindent 8 }}
+        {{- include "factory.volumeSvcLogs" . | nindent 8 }}
+        {{- include "factory.volumeProjectedSecrets" . | nindent 8 }}
+        {{- include "factory.volumeCredentials" . | nindent 12 }}
+        {{- include "factory.volumeAasBearerToken" . | nindent 12 }}
+        {{- include "factory.volumeK8sToken" . | nindent 12 }}
+        {{- include "factory.volumesBasePV" . | nindent 8 }}
