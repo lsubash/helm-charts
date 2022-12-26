@@ -3,7 +3,7 @@ entries:
   Host-Attestation:
   - apiVersion: v2
     appVersion: v5.1.0
-    created: "2022-09-10T11:20:38.222200574-07:00"
+    created: "2022-12-26T02:59:49.246810849-08:00"
     dependencies:
     - name: factory
       repository: file://../../lib/factory/
@@ -42,7 +42,7 @@ entries:
       repository: file://../../services/nats/
       version: 5.1.0
     description: A Helm chart for Deploying ISecL-DC Platform Attestation Use case
-    digest: 6433d1079d5db822a40057851172f8e584a48f5d95bbc2e7f11b5a3d8b3bb482
+    digest: f2753a0ce6b239b254dcda0396eafcdb2d1f7ea6e33c9bc11c46be24224015f5
     maintainers:
     - email: johnny.jacob@intel.com
       name: JJ
@@ -55,6 +55,60 @@ entries:
     urls:
     - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/Host-Attestation-v5.1.0.tgz
     version: v5.1.0
+  - apiVersion: v2
+    appVersion: v5.0.0
+    created: "2022-09-10T11:20:38.222200574-07:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.0.0
+    - name: cleanup-secrets
+      repository: file://../../jobs/cleanup-secrets/
+      version: 5.0.0
+    - name: cleanup-jobs
+      repository: file://../../jobs/cleanup-jobs/
+      version: 5.0.0
+    - name: global-admin-generator
+      repository: file://../../jobs/global-admin-generator/
+      version: 5.0.0
+    - name: aasdb-cert-generator
+      repository: file://../../jobs/aasdb-cert-generator/
+      version: 5.0.0
+    - name: nats-init
+      repository: file://../../jobs/nats/
+      version: 5.0.0
+    - name: hvsdb-cert-generator
+      repository: file://../../jobs/hvsdb-cert-generator/
+      version: 5.0.0
+    - name: cms
+      repository: file://../../services/cms/
+      version: 5.0.0
+    - name: aas
+      repository: file://../../services/aas/
+      version: 5.0.0
+    - name: hvs
+      repository: file://../../services/hvs/
+      version: 5.0.0
+    - name: trustagent
+      repository: file://../../services/ta/
+      version: 5.0.0
+    - name: nats
+      repository: file://../../services/nats/
+      version: 5.0.0
+    description: A Helm chart for Deploying ISecL-DC Platform Attestation Use case
+    digest: 6433d1079d5db822a40057851172f8e584a48f5d95bbc2e7f11b5a3d8b3bb482
+    maintainers:
+    - email: johnny.jacob@intel.com
+      name: JJ
+    - email: praveenrajr@intel.com
+      name: PraveenRaj R
+    - email: raghavender.nagarajan@intel.com
+      name: rana19
+    name: Host-Attestation
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.0.0-Beta/Host-Attestation-v5.0.0.tgz
+    version: v5.0.0
   - apiVersion: v2
     appVersion: v4.2.0
     created: "2022-03-30T03:20:38.152949132-07:00"
@@ -106,10 +160,260 @@ entries:
     urls:
     - https://github.com/intel-secl/helm-charts/releases/download/v4.2.0-Beta/Host-Attestation-4.2.0.tgz
     version: 4.2.0
+  SGX-Infrastructure:
+  - apiVersion: v2
+    appVersion: v5.1.0
+    created: "2022-12-26T02:59:49.295945359-08:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.1.0
+    - name: cleanup-secrets
+      repository: file://../../jobs/cleanup-secrets/
+      version: 5.1.0
+    - name: cleanup-jobs
+      repository: file://../../jobs/cleanup-jobs/
+      version: 5.1.0
+    - name: sagent-aas-manager
+      repository: file://../../jobs/sagent-aas-mgr/
+      version: 5.1.0
+    - name: aasdb-cert-generator
+      repository: file://../../jobs/aasdb-cert-generator/
+      version: 5.1.0
+    - name: scsdb-cert-generator
+      repository: file://../../jobs/scsdb-cert-generator/
+      version: 5.1.0
+    - name: global-admin-generator
+      repository: file://../../jobs/global-admin-generator/
+      version: 5.1.0
+    - name: cms
+      repository: file://../../services/cms/
+      version: 5.1.0
+    - name: aas
+      repository: file://../../services/aas/
+      version: 5.1.0
+    - name: kbs
+      repository: file://../../services/kbs/
+      version: 5.1.0
+    - name: scs
+      repository: file://../../services/scs/
+      version: 5.1.0
+    - name: sqvs
+      repository: file://../../services/sqvs/
+      version: 5.1.0
+    - name: sagent
+      repository: file://../../services/sagent/
+      version: 5.1.0
+    description: A Helm chart for Deploying ISecL-DC SGX Infrastructure use case
+    digest: 002dd7401405c6ac07a05fe82f1841650059f36c157843cac59e5697e54c4fea
+    maintainers:
+    - email: johnny.jacob@intel.com
+      name: JJ
+    - email: praveenrajr@intel.com
+      name: PraveenRaj R
+    - email: raghavender.nagarajan@intel.com
+      name: rana19
+    name: SGX-Infrastructure
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/SGX-Infrastructure-v5.1.0.tgz
+    version: v5.1.0
+  SGX-Infrastructure-Orchestration:
+  - apiVersion: v2
+    appVersion: v5.1.0
+    created: "2022-12-26T02:59:49.277321128-08:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.1.0
+    - name: cleanup-secrets
+      repository: file://../../jobs/cleanup-secrets/
+      version: 5.1.0
+    - name: cleanup-jobs
+      repository: file://../../jobs/cleanup-jobs/
+      version: 5.1.0
+    - name: sagent-aas-manager
+      repository: file://../../jobs/sagent-aas-mgr/
+      version: 5.1.0
+    - name: aasdb-cert-generator
+      repository: file://../../jobs/aasdb-cert-generator/
+      version: 5.1.0
+    - name: scsdb-cert-generator
+      repository: file://../../jobs/scsdb-cert-generator/
+      version: 5.1.0
+    - name: shvsdb-cert-generator
+      repository: file://../../jobs/shvsdb-cert-generator/
+      version: 5.1.0
+    - name: global-admin-generator
+      repository: file://../../jobs/global-admin-generator/
+      version: 5.1.0
+    - name: cms
+      repository: file://../../services/cms/
+      version: 5.1.0
+    - name: aas
+      repository: file://../../services/aas/
+      version: 5.1.0
+    - name: isecl-controller
+      repository: file://../../services/isecl-controller/
+      version: 5.1.0
+    - name: ihub
+      repository: file://../../services/ihub/
+      version: 5.1.0
+    - name: isecl-scheduler
+      repository: file://../../services/isecl-scheduler/
+      version: 5.1.0
+    - name: kbs
+      repository: file://../../services/kbs/
+      version: 5.1.0
+    - name: scs
+      repository: file://../../services/scs/
+      version: 5.1.0
+    - name: sqvs
+      repository: file://../../services/sqvs/
+      version: 5.1.0
+    - name: shvs
+      repository: file://../../services/shvs/
+      version: 5.1.0
+    - name: sagent
+      repository: file://../../services/sagent/
+      version: 5.1.0
+    description: A Helm chart for Deploying ISecL-DC SGX Infrastructure and Orchestration
+      use cases
+    digest: 76293ca8439fb1cd1a835f4d4625c90a6301332e0da72c33f3db1e7c2725147e
+    maintainers:
+    - email: johnny.jacob@intel.com
+      name: JJ
+    - email: praveenrajr@intel.com
+      name: PraveenRaj R
+    - email: raghavender.nagarajan@intel.com
+      name: rana19
+    name: SGX-Infrastructure-Orchestration
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/SGX-Infrastructure-Orchestration-v5.1.0.tgz
+    version: v5.1.0
+  SGX-Orchestration:
+  - apiVersion: v2
+    appVersion: v5.1.0
+    created: "2022-12-26T02:59:49.315195603-08:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.1.0
+    - name: cleanup-secrets
+      repository: file://../../jobs/cleanup-secrets/
+      version: 5.1.0
+    - name: cleanup-jobs
+      repository: file://../../jobs/cleanup-jobs/
+      version: 5.1.0
+    - name: sagent-aas-manager
+      repository: file://../../jobs/sagent-aas-mgr/
+      version: 5.1.0
+    - name: aasdb-cert-generator
+      repository: file://../../jobs/aasdb-cert-generator/
+      version: 5.1.0
+    - name: scsdb-cert-generator
+      repository: file://../../jobs/scsdb-cert-generator/
+      version: 5.1.0
+    - name: shvsdb-cert-generator
+      repository: file://../../jobs/shvsdb-cert-generator/
+      version: 5.1.0
+    - name: global-admin-generator
+      repository: file://../../jobs/global-admin-generator/
+      version: 5.1.0
+    - name: cms
+      repository: file://../../services/cms/
+      version: 5.1.0
+    - name: aas
+      repository: file://../../services/aas/
+      version: 5.1.0
+    - name: scs
+      repository: file://../../services/scs/
+      version: 5.1.0
+    - name: isecl-controller
+      repository: file://../../services/isecl-controller/
+      version: 5.1.0
+    - name: ihub
+      repository: file://../../services/ihub/
+      version: 5.1.0
+    - name: isecl-scheduler
+      repository: file://../../services/isecl-scheduler/
+      version: 5.1.0
+    - name: shvs
+      repository: file://../../services/shvs/
+      version: 5.1.0
+    - name: sagent
+      repository: file://../../services/sagent/
+      version: 5.1.0
+    description: A Helm chart for Deploying ISecL-DC SGX Orchestration Use case
+    digest: fafc763ffb794bc4b4505904957435e12fd81b97be61ce51cc5a099ab7814bda
+    maintainers:
+    - email: johnny.jacob@intel.com
+      name: JJ
+    - email: praveenrajr@intel.com
+      name: PraveenRaj R
+    - email: raghavender.nagarajan@intel.com
+      name: rana19
+    name: SGX-Orchestration
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/SGX-Orchestration-v5.1.0.tgz
+    version: v5.1.0
+  SGX-VMWare:
+  - apiVersion: v2
+    appVersion: v5.1.0
+    created: "2022-12-26T02:59:49.329069205-08:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.1.0
+    - name: cleanup-secrets
+      repository: file://../../jobs/cleanup-secrets/
+      version: 5.1.0
+    - name: cleanup-jobs
+      repository: file://../../jobs/cleanup-jobs/
+      version: 5.1.0
+    - name: sagent-aas-manager
+      repository: file://../../jobs/sagent-aas-mgr/
+      version: 5.1.0
+    - name: aasdb-cert-generator
+      repository: file://../../jobs/aasdb-cert-generator/
+      version: 5.1.0
+    - name: scsdb-cert-generator
+      repository: file://../../jobs/scsdb-cert-generator/
+      version: 5.1.0
+    - name: global-admin-generator
+      repository: file://../../jobs/global-admin-generator/
+      version: 5.1.0
+    - name: cms
+      repository: file://../../services/cms/
+      version: 5.1.0
+    - name: aas
+      repository: file://../../services/aas/
+      version: 5.1.0
+    - name: scs
+      repository: file://../../services/scs/
+      version: 5.1.0
+    - name: sagent
+      repository: file://../../services/sagent/
+      version: 5.1.0
+    description: A Helm chart for Deploying ISecL-DC SGX Infrastructure for caching
+      platform data use case
+    digest: dca70933e5fc846e59cef89d2a0959141e1f1506d3e2f66addb2461a22d5d0eb
+    maintainers:
+    - email: shefali.kamal@intel.com
+      name: Shefali Kamal
+    - email: srinivasan.rajendran@intel.com
+      name: Rajendran, Srinivasan
+    name: SGX-VMWare
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/SGX-VMWare-v5.1.0.tgz
+    version: v5.1.0
   Trusted-Workload-Placement:
   - apiVersion: v2
     appVersion: v5.1.0
-    created: "2022-09-10T11:20:38.320944508-07:00"
+    created: "2022-12-26T02:59:49.383227661-08:00"
     dependencies:
     - name: factory
       repository: file://../../lib/factory/
@@ -158,7 +462,7 @@ entries:
       version: 5.1.0
     description: A Helm chart for Deploying ISecL-DC Trusted Workload Placement Use
       case
-    digest: ae66f6d0c29a22d4955c76722c62327d5e98d1978c83d5fa6e59e0610525d7a5
+    digest: 6cc523b0ab9e11a9deab6b66f49023a6d20c715883639965c49bdf03117ba880
     maintainers:
     - email: johnny.jacob@intel.com
       name: JJ
@@ -171,6 +475,70 @@ entries:
     urls:
     - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/Trusted-Workload-Placement-v5.1.0.tgz
     version: v5.1.0
+  - apiVersion: v2
+    appVersion: v5.0.0
+    created: "2022-09-10T11:20:38.320944508-07:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.0.0
+    - name: cleanup-secrets
+      repository: file://../../jobs/cleanup-secrets/
+      version: 5.0.0
+    - name: cleanup-jobs
+      repository: file://../../jobs/cleanup-jobs/
+      version: 5.0.0
+    - name: aasdb-cert-generator
+      repository: file://../../jobs/aasdb-cert-generator/
+      version: 5.0.0
+    - name: hvsdb-cert-generator
+      repository: file://../../jobs/hvsdb-cert-generator/
+      version: 5.0.0
+    - name: global-admin-generator
+      repository: file://../../jobs/global-admin-generator/
+      version: 5.0.0
+    - name: nats-init
+      repository: file://../../jobs/nats/
+      version: 5.0.0
+    - name: cms
+      repository: file://../../services/cms/
+      version: 5.0.0
+    - name: aas
+      repository: file://../../services/aas/
+      version: 5.0.0
+    - name: hvs
+      repository: file://../../services/hvs/
+      version: 5.0.0
+    - name: trustagent
+      repository: file://../../services/ta/
+      version: 5.0.0
+    - name: isecl-controller
+      repository: file://../../services/isecl-controller/
+      version: 5.0.0
+    - name: ihub
+      repository: file://../../services/ihub/
+      version: 5.0.0
+    - name: isecl-scheduler
+      repository: file://../../services/isecl-scheduler/
+      version: 5.0.0
+    - name: nats
+      repository: file://../../services/nats/
+      version: 5.0.0
+    description: A Helm chart for Deploying ISecL-DC Trusted Workload Placement Use
+      case
+    digest: ae66f6d0c29a22d4955c76722c62327d5e98d1978c83d5fa6e59e0610525d7a5
+    maintainers:
+    - email: johnny.jacob@intel.com
+      name: JJ
+    - email: praveenrajr@intel.com
+      name: PraveenRaj R
+    - email: raghavender.nagarajan@intel.com
+      name: rana19
+    name: Trusted-Workload-Placement
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.0.0-Beta/Trusted-Workload-Placement-v5.0.0.tgz
+    version: v5.0.0
   - apiVersion: v2
     appVersion: v4.2.0
     created: "2022-03-30T03:20:38.170793699-07:00"
@@ -235,7 +603,7 @@ entries:
   Trusted-Workload-Placement-Cloud-Service-Provider:
   - apiVersion: v2
     appVersion: v5.1.0
-    created: "2022-09-10T11:20:38.245451871-07:00"
+    created: "2022-12-26T02:59:49.344199444-08:00"
     dependencies:
     - name: factory
       repository: file://../../lib/factory/
@@ -266,7 +634,7 @@ entries:
       version: 5.1.0
     description: A Helm chart for Deploying ISecL-DC Trusted Workload Placement -
       Cloud Service Provider Use case
-    digest: fb44db621244b88b9dbe0f4b9abbfb85a76edcd2267b3858d16121a9ce7fd580
+    digest: dcb219d464b06fe3734bd1de61f438c4ae8a3c7c95b88be33a4b7d76b1148e30
     maintainers:
     - email: johnny.jacob@intel.com
       name: JJ
@@ -279,6 +647,52 @@ entries:
     urls:
     - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/Trusted-Workload-Placement-Cloud-Service-Provider-v5.1.0.tgz
     version: v5.1.0
+  - apiVersion: v2
+    appVersion: v5.0.0
+    created: "2022-09-10T11:20:38.245451871-07:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.0.0
+    - name: cleanup-secrets
+      repository: file://../../jobs/cleanup-secrets/
+      version: 5.0.0
+    - name: cms-tls-secret-generator
+      repository: file://../../jobs/cms-tls-secret-generator/
+      version: 5.0.0
+    - name: cleanup-jobs
+      repository: file://../../jobs/cleanup-jobs/
+      version: 5.0.0
+    - name: trustagent
+      repository: file://../../services/ta/
+      version: 5.0.0
+    - name: isecl-controller
+      repository: file://../../services/isecl-controller/
+      version: 5.0.0
+    - name: ihub
+      repository: file://../../services/ihub/
+      version: 5.0.0
+    - name: isecl-scheduler
+      repository: file://../../services/isecl-scheduler/
+      version: 5.0.0
+    - name: admission-controller
+      repository: file://../../services/admission-controller/
+      version: 5.0.0
+    description: A Helm chart for Deploying ISecL-DC Trusted Workload Placement -
+      Cloud Service Provider Use case
+    digest: fb44db621244b88b9dbe0f4b9abbfb85a76edcd2267b3858d16121a9ce7fd580
+    maintainers:
+    - email: johnny.jacob@intel.com
+      name: JJ
+    - email: praveenrajr@intel.com
+      name: PraveenRaj R
+    - email: raghavender.nagarajan@intel.com
+      name: rana19
+    name: Trusted-Workload-Placement-Cloud-Service-Provider
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.0.0-Beta/Trusted-Workload-Placement-Cloud-Service-Provider-v5.0.0.tgz
+    version: v5.0.0
   - apiVersion: v2
     appVersion: v4.2.0
     created: "2022-03-30T03:20:38.178485556-07:00"
@@ -325,7 +739,7 @@ entries:
   Trusted-Workload-Placement-Control-Plane:
   - apiVersion: v2
     appVersion: v5.1.0
-    created: "2022-09-10T11:20:38.282533433-07:00"
+    created: "2022-12-26T02:59:49.361669567-08:00"
     dependencies:
     - name: factory
       repository: file://../../lib/factory/
@@ -365,7 +779,7 @@ entries:
       version: 5.1.0
     description: A Helm chart for Deploying ISecL-DC Trusted Workload Placement -
       Control Plane Use case
-    digest: d348f239d5511980602dd5c93c06960f8474a03fd3467be7aac3542e27b41e31
+    digest: 878c099e625cb77860527b19dece49376564f5a8ebc73d3fa99ba3a3625fc2af
     maintainers:
     - email: johnny.jacob@intel.com
       name: JJ
@@ -378,6 +792,61 @@ entries:
     urls:
     - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/Trusted-Workload-Placement-Control-Plane-v5.1.0.tgz
     version: v5.1.0
+  - apiVersion: v2
+    appVersion: v5.0.0
+    created: "2022-09-10T11:20:38.282533433-07:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.0.0
+    - name: cleanup-secrets
+      repository: file://../../jobs/cleanup-secrets/
+      version: 5.0.0
+    - name: cleanup-jobs
+      repository: file://../../jobs/cleanup-jobs/
+      version: 5.0.0
+    - name: aasdb-cert-generator
+      repository: file://../../jobs/aasdb-cert-generator/
+      version: 5.0.0
+    - name: global-admin-generator
+      repository: file://../../jobs/global-admin-generator/
+      version: 5.0.0
+    - name: hvsdb-cert-generator
+      repository: file://../../jobs/hvsdb-cert-generator/
+      version: 5.0.0
+    - name: cms
+      repository: file://../../services/cms/
+      version: 5.0.0
+    - name: aas
+      repository: file://../../services/aas/
+      version: 5.0.0
+    - name: nats-init
+      repository: file://../../jobs/nats/
+      version: 5.0.0
+    - name: hvs
+      repository: file://../../services/hvs/
+      version: 5.0.0
+    - name: nats
+      repository: file://../../services/nats/
+      version: 5.0.0
+    - name: trustagent-aas-manager
+      repository: file://../../jobs/tagent-aas-mgr
+      version: 5.0.0
+    description: A Helm chart for Deploying ISecL-DC Trusted Workload Placement -
+      Control Plane Use case
+    digest: d348f239d5511980602dd5c93c06960f8474a03fd3467be7aac3542e27b41e31
+    maintainers:
+    - email: johnny.jacob@intel.com
+      name: JJ
+    - email: praveenrajr@intel.com
+      name: PraveenRaj R
+    - email: raghavender.nagarajan@intel.com
+      name: rana19
+    name: Trusted-Workload-Placement-Control-Plane
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.0.0-Beta/Trusted-Workload-Placement-Control-Plane-v5.0.0.tgz
+    version: v5.0.0
   - apiVersion: v2
     appVersion: v4.2.0
     created: "2022-03-30T03:20:38.188845822-07:00"
@@ -430,7 +899,7 @@ entries:
   Workload-Security:
   - apiVersion: v2
     appVersion: v5.1.0
-    created: "2022-09-10T11:20:38.367627344-07:00"
+    created: "2022-12-26T02:59:49.409607368-08:00"
     dependencies:
     - name: factory
       repository: file://../../lib/factory/
@@ -490,7 +959,7 @@ entries:
       repository: file://../../services/wla/
       version: 5.1.0
     description: A Helm chart for Deploying ISecL-DC Workload Security Use case
-    digest: ea819533abbab5a8bf666ff244d444e421fba7cc775dd2f5113743e0722a686c
+    digest: 0a558df4a25ad5dac8f38a0aa6c131a76ab4f1fa7a0d4e8441cfc422c1388d02
     maintainers:
     - email: johnny.jacob@intel.com
       name: JJ
@@ -503,22 +972,112 @@ entries:
     urls:
     - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/Workload-Security-v5.1.0.tgz
     version: v5.1.0
+  - apiVersion: v2
+    appVersion: v5.0.0
+    created: "2022-09-10T11:20:38.367627344-07:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.0.0
+    - name: cleanup-secrets
+      repository: file://../../jobs/cleanup-secrets/
+      version: 5.0.0
+    - name: wpm
+      repository: file://../../jobs/wpm-aas-mgr/
+      version: 5.0.0
+    - name: cleanup-jobs
+      repository: file://../../jobs/cleanup-jobs/
+      version: 5.0.0
+    - name: aasdb-cert-generator
+      repository: file://../../jobs/aasdb-cert-generator/
+      version: 5.0.0
+    - name: hvsdb-cert-generator
+      repository: file://../../jobs/hvsdb-cert-generator/
+      version: 5.0.0
+    - name: global-admin-generator
+      repository: file://../../jobs/global-admin-generator/
+      version: 5.0.0
+    - name: nats-init
+      repository: file://../../jobs/nats/
+      version: 5.0.0
+    - name: cms
+      repository: file://../../services/cms/
+      version: 5.0.0
+    - name: aas
+      repository: file://../../services/aas/
+      version: 5.0.0
+    - name: hvs
+      repository: file://../../services/hvs/
+      version: 5.0.0
+    - name: trustagent
+      repository: file://../../services/ta/
+      version: 5.0.0
+    - name: isecl-controller
+      repository: file://../../services/isecl-controller/
+      version: 5.0.0
+    - name: ihub
+      repository: file://../../services/ihub/
+      version: 5.0.0
+    - name: isecl-scheduler
+      repository: file://../../services/isecl-scheduler/
+      version: 5.0.0
+    - name: nats
+      repository: file://../../services/nats/
+      version: 5.0.0
+    - name: kbs
+      repository: file://../../services/kbs/
+      version: 5.0.0
+    - name: wls
+      repository: file://../../services/wls/
+      version: 5.0.0
+    - name: workload-agent
+      repository: file://../../services/wla/
+      version: 5.0.0
+    description: A Helm chart for Deploying ISecL-DC Workload Security Use case
+    digest: ea819533abbab5a8bf666ff244d444e421fba7cc775dd2f5113743e0722a686c
+    maintainers:
+    - email: johnny.jacob@intel.com
+      name: JJ
+    - email: praveenrajr@intel.com
+      name: PraveenRaj R
+    - email: raghavender.nagarajan@intel.com
+      name: rana19
+    name: Workload-Security
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.0.0-Beta/Workload-Security-v5.0.0.tgz
+    version: v5.0.0
   aas:
   - apiVersion: v2
     appVersion: v5.1.0
-    created: "2022-09-10T11:20:38.371339163-07:00"
+    created: "2022-12-26T02:59:49.410968296-08:00"
     dependencies:
     - name: factory
       repository: file://../../lib/factory/
       version: 5.1.0
     description: A Helm chart for Installing ISecL-DC Authentication and Authorization
       Service
-    digest: c28900f7d9a62482443cea33b39cfd5c9d284aecebc9b67be71d2b300f2f4e34
+    digest: 448176baaf6e4c86322ccca45f352fd33b4f9cc57328bfe8a372a3dfc7fc2927
     name: aas
     type: application
     urls:
     - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/aas-v5.1.0.tgz
     version: v5.1.0
+  - apiVersion: v2
+    appVersion: v5.0.0
+    created: "2022-09-10T11:20:38.371339163-07:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.0.0
+    description: A Helm chart for Installing ISecL-DC Authentication and Authorization
+      Service
+    digest: c28900f7d9a62482443cea33b39cfd5c9d284aecebc9b67be71d2b300f2f4e34
+    name: aas
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.0.0-Beta/aas-v5.0.0.tgz
+    version: v5.0.0
   - apiVersion: v2
     appVersion: v4.2.0
     created: "2022-03-30T03:20:38.190468921-07:00"
@@ -553,18 +1112,32 @@ entries:
   aasdb-cert-generator:
   - apiVersion: v2
     appVersion: v5.1.0
-    created: "2022-09-10T11:20:38.37311702-07:00"
+    created: "2022-12-26T02:59:49.411826923-08:00"
     dependencies:
     - name: factory
       repository: file://../../lib/factory/
       version: 5.1.0
     description: A Helm chart for creating aasdb certificates
-    digest: f960bfc36a2e71d58641b879719e75005bcf362931abcee2303b649997048fb8
+    digest: 5fe8c0c6a1c86a7aee55afd529017f6619d1411fa9f92e38b9bff9e69b16a81b
     name: aasdb-cert-generator
     type: application
     urls:
     - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/aasdb-cert-generator-v5.1.0.tgz
     version: v5.1.0
+  - apiVersion: v2
+    appVersion: v5.0.0
+    created: "2022-09-10T11:20:38.37311702-07:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.0.0
+    description: A Helm chart for creating aasdb certificates
+    digest: f960bfc36a2e71d58641b879719e75005bcf362931abcee2303b649997048fb8
+    name: aasdb-cert-generator
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.0.0-Beta/aasdb-cert-generator-v5.0.0.tgz
+    version: v5.0.0
   - apiVersion: v2
     appVersion: v4.2.0
     created: "2022-03-30T03:20:38.193007418-07:00"
@@ -582,18 +1155,32 @@ entries:
   admission-controller:
   - apiVersion: v2
     appVersion: v5.1.0
-    created: "2022-09-10T11:20:38.375246178-07:00"
+    created: "2022-12-26T02:59:49.412793931-08:00"
     dependencies:
     - name: factory
       repository: file://../../lib/factory/
       version: 5.1.0
     description: A Helm chart for Installing ISecL-DC Admision Controller
-    digest: af8e89fca8049807c775d99d27a33b01340c6b84ff6ee85ba14df3e899f2708e
+    digest: e3eccb22dfe6d089e56a46f8c060d90f4a1bda24a78fbf9d2e42168ea153b6db
     name: admission-controller
     type: application
     urls:
     - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/admission-controller-v5.1.0.tgz
     version: v5.1.0
+  - apiVersion: v2
+    appVersion: v5.0.0
+    created: "2022-09-10T11:20:38.375246178-07:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.0.0
+    description: A Helm chart for Installing ISecL-DC Admision Controller
+    digest: af8e89fca8049807c775d99d27a33b01340c6b84ff6ee85ba14df3e899f2708e
+    name: admission-controller
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.0.0-Beta/admission-controller-v5.0.0.tgz
+    version: v5.0.0
   - apiVersion: v2
     appVersion: v4.2.0
     created: "2022-03-30T03:20:38.194017278-07:00"
@@ -611,33 +1198,61 @@ entries:
   cleanup-jobs:
   - apiVersion: v2
     appVersion: v5.1.0
-    created: "2022-09-10T11:20:38.377031148-07:00"
+    created: "2022-12-26T02:59:49.413647728-08:00"
     dependencies:
     - name: factory
       repository: file://../../lib/factory/
       version: 5.1.0
     description: A Helm chart for cleaning up jobs before upgrade
-    digest: 48d4f5bac5fdd446947dbf2ac43a094d52e3634a0b9d9644bd3b33b049c6234a
+    digest: b3dbc2b0254a92fe3ea44fe730c31096a009603a39b464d566a02e416f4a07fb
     name: cleanup-jobs
     type: application
     urls:
     - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/cleanup-jobs-v5.1.0.tgz
     version: v5.1.0
+  - apiVersion: v2
+    appVersion: v5.0.0
+    created: "2022-09-10T11:20:38.377031148-07:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.0.0
+    description: A Helm chart for cleaning up jobs before upgrade
+    digest: 48d4f5bac5fdd446947dbf2ac43a094d52e3634a0b9d9644bd3b33b049c6234a
+    name: cleanup-jobs
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.0.0-Beta/cleanup-jobs-v5.0.0.tgz
+    version: v5.0.0
   cleanup-secrets:
   - apiVersion: v2
     appVersion: v5.1.0
-    created: "2022-09-10T11:20:38.378877201-07:00"
+    created: "2022-12-26T02:59:49.414501904-08:00"
     dependencies:
     - name: factory
       repository: file://../../lib/factory/
       version: 5.1.0
     description: A Helm chart for cleaning up secrets post helm uninstall of a release
-    digest: 6de5821c3fcf59f2e3eb73c9cc582d91573a0b6193dd261ec069c043d1b00660
+    digest: e0a27ade26128b4d2dd69acd358adf6418bec5b01c4b789072e8d6c4a7553a47
     name: cleanup-secrets
     type: application
     urls:
     - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/cleanup-secrets-v5.1.0.tgz
     version: v5.1.0
+  - apiVersion: v2
+    appVersion: v5.0.0
+    created: "2022-09-10T11:20:38.378877201-07:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.0.0
+    description: A Helm chart for cleaning up secrets post helm uninstall of a release
+    digest: 6de5821c3fcf59f2e3eb73c9cc582d91573a0b6193dd261ec069c043d1b00660
+    name: cleanup-secrets
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.0.0-Beta/cleanup-secrets-v5.0.0.tgz
+    version: v5.0.0
   - apiVersion: v2
     appVersion: v4.2.0
     created: "2022-03-30T03:20:38.194929313-07:00"
@@ -655,18 +1270,32 @@ entries:
   cms:
   - apiVersion: v2
     appVersion: v5.1.0
-    created: "2022-09-10T11:20:38.383023585-07:00"
+    created: "2022-12-26T02:59:49.416377362-08:00"
     dependencies:
     - name: factory
       repository: file://../../lib/factory/
       version: 5.1.0
     description: A Helm chart for Installing ISecL-DC Certificate Management Service
-    digest: 20fee1f6df8412fd4238e037c883b489e6b9c2983fdee9541e915ae2205103e0
+    digest: f341a5fe8992ab0c34992a9175a1141251c09e6612982752d41542f5d75b9203
     name: cms
     type: application
     urls:
     - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/cms-v5.1.0.tgz
     version: v5.1.0
+  - apiVersion: v2
+    appVersion: v5.0.0
+    created: "2022-09-10T11:20:38.383023585-07:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.0.0
+    description: A Helm chart for Installing ISecL-DC Certificate Management Service
+    digest: 20fee1f6df8412fd4238e037c883b489e6b9c2983fdee9541e915ae2205103e0
+    name: cms
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.0.0-Beta/cms-v5.0.0.tgz
+    version: v5.0.0
   - apiVersion: v2
     appVersion: v4.2.0
     created: "2022-03-30T03:20:38.195982599-07:00"
@@ -684,48 +1313,90 @@ entries:
   cms-tls-secret-generator:
   - apiVersion: v2
     appVersion: v5.1.0
-    created: "2022-09-10T11:20:38.380509949-07:00"
+    created: "2022-12-26T02:59:49.415286154-08:00"
     dependencies:
     - name: factory
       repository: file://../../lib/factory/
       version: 5.1.0
     description: A Helm chart for creating cms tls secret generator
-    digest: bb99be307760168849bd2e70dfa531f2d72c82f32f7150860e7d558f378cf211
+    digest: 423729578686e61c1a8a90f809a586aa9ad21a267a007d0e62ca1ed1298101ea
     name: cms-tls-secret-generator
     type: application
     urls:
     - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/cms-tls-secret-generator-v5.1.0.tgz
     version: v5.1.0
+  - apiVersion: v2
+    appVersion: v5.0.0
+    created: "2022-09-10T11:20:38.380509949-07:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.0.0
+    description: A Helm chart for creating cms tls secret generator
+    digest: bb99be307760168849bd2e70dfa531f2d72c82f32f7150860e7d558f378cf211
+    name: cms-tls-secret-generator
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.0.0-Beta/cms-tls-secret-generator-v5.0.0.tgz
+    version: v5.0.0
   global-admin-generator:
   - apiVersion: v2
     appVersion: v5.1.0
-    created: "2022-09-10T11:20:38.385492714-07:00"
+    created: "2022-12-26T02:59:49.417426119-08:00"
     dependencies:
     - name: factory
       repository: file://../../lib/factory/
       version: 5.1.0
     description: A Helm chart for creating Global Admin User Account
-    digest: 32ae63d580976fed3e6b01eb67a37897a2874d2589ddbece72bbe1c5b96b7a2b
+    digest: 0d21af548bf99c486f5b41d1c7aff781246c1ea932afdf0d7bc51b6d495070f1
     name: global-admin-generator
     type: application
     urls:
     - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/global-admin-generator-v5.1.0.tgz
     version: v5.1.0
+  - apiVersion: v2
+    appVersion: v5.0.0
+    created: "2022-09-10T11:20:38.385492714-07:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.0.0
+    description: A Helm chart for creating Global Admin User Account
+    digest: 32ae63d580976fed3e6b01eb67a37897a2874d2589ddbece72bbe1c5b96b7a2b
+    name: global-admin-generator
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.0.0-Beta/global-admin-generator-v5.0.0.tgz
+    version: v5.0.0
   hvs:
   - apiVersion: v2
     appVersion: v5.1.0
-    created: "2022-09-10T11:20:38.389869351-07:00"
+    created: "2022-12-26T02:59:49.421096922-08:00"
     dependencies:
     - name: factory
       repository: file://../../lib/factory/
       version: 5.1.0
     description: A Helm chart for Installing ISecL-DC Host Verification Service
-    digest: b443d8f760ab16ba02531c4e5393cacb8a9a826de61026849e4e8371f8639a9f
+    digest: 254cd0d1746d4f2dd833336543c2d0bec7728bb8bace6b127416d0294039e58c
     name: hvs
     type: application
     urls:
     - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/hvs-v5.1.0.tgz
     version: v5.1.0
+  - apiVersion: v2
+    appVersion: v5.0.0
+    created: "2022-09-10T11:20:38.389869351-07:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.0.0
+    description: A Helm chart for Installing ISecL-DC Host Verification Service
+    digest: b443d8f760ab16ba02531c4e5393cacb8a9a826de61026849e4e8371f8639a9f
+    name: hvs
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.0.0-Beta/hvs-v5.0.0.tgz
+    version: v5.0.0
   - apiVersion: v2
     appVersion: v4.2.0
     created: "2022-03-30T03:20:38.197287645-07:00"
@@ -743,18 +1414,32 @@ entries:
   hvsdb-cert-generator:
   - apiVersion: v2
     appVersion: v5.1.0
-    created: "2022-09-10T11:20:38.39258676-07:00"
+    created: "2022-12-26T02:59:49.421906544-08:00"
     dependencies:
     - name: factory
       repository: file://../../lib/factory/
       version: 5.1.0
     description: A Helm chart for generating tls certs for database deployments
-    digest: 426e5bc8b84d70c84552f604462f0a44a22b03652b199a5effbe3104851ecfea
+    digest: 655482fe988d5fc6455ca48ee5da5d4689f41a885188a15bd35b8cf0a66deb5a
     name: hvsdb-cert-generator
     type: application
     urls:
     - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/hvsdb-cert-generator-v5.1.0.tgz
     version: v5.1.0
+  - apiVersion: v2
+    appVersion: v5.0.0
+    created: "2022-09-10T11:20:38.39258676-07:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.0.0
+    description: A Helm chart for generating tls certs for database deployments
+    digest: 426e5bc8b84d70c84552f604462f0a44a22b03652b199a5effbe3104851ecfea
+    name: hvsdb-cert-generator
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.0.0-Beta/hvsdb-cert-generator-v5.0.0.tgz
+    version: v5.0.0
   - apiVersion: v2
     appVersion: v4.2.0
     created: "2022-03-30T03:20:38.198053689-07:00"
@@ -772,18 +1457,32 @@ entries:
   ihub:
   - apiVersion: v2
     appVersion: v5.1.0
-    created: "2022-09-10T11:20:38.395929089-07:00"
+    created: "2022-12-26T02:59:49.423199929-08:00"
     dependencies:
     - name: factory
       repository: file://../../lib/factory/
       version: 5.1.0
     description: A Helm chart for Installing ISecL-DC Integration Hub
-    digest: 9f25988b6d3d96cd070842361b5d36e4b696cc97e960e48a51fee4c0c185a60d
+    digest: 2c6b72725f33a3a76309203dc15cc299d74f3c2810597ed18e6276d71eb3d021
     name: ihub
     type: application
     urls:
     - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/ihub-v5.1.0.tgz
     version: v5.1.0
+  - apiVersion: v2
+    appVersion: v5.0.0
+    created: "2022-09-10T11:20:38.395929089-07:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.0.0
+    description: A Helm chart for Installing ISecL-DC Integration Hub
+    digest: 9f25988b6d3d96cd070842361b5d36e4b696cc97e960e48a51fee4c0c185a60d
+    name: ihub
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.0.0-Beta/ihub-v5.0.0.tgz
+    version: v5.0.0
   - apiVersion: v2
     appVersion: v4.2.0
     created: "2022-03-30T03:20:38.199106866-07:00"
@@ -801,18 +1500,32 @@ entries:
   isecl-controller:
   - apiVersion: v2
     appVersion: v5.1.0
-    created: "2022-09-10T11:20:38.398763528-07:00"
+    created: "2022-12-26T02:59:49.424182138-08:00"
     dependencies:
     - name: factory
       repository: file://../../lib/factory/
       version: 5.1.0
     description: A Helm chart for Installing ISecL-DC Custom Controller
-    digest: a7e655202b4af0e8573ae1aa3022d5939a63a24b8dd9ad758adfb97a19c06956
+    digest: 11ebb908da4a50a6dc024e871070429647952423ea51ca055f3dc5f22593477d
     name: isecl-controller
     type: application
     urls:
     - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/isecl-controller-v5.1.0.tgz
     version: v5.1.0
+  - apiVersion: v2
+    appVersion: v5.0.0
+    created: "2022-09-10T11:20:38.398763528-07:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.0.0
+    description: A Helm chart for Installing ISecL-DC Custom Controller
+    digest: a7e655202b4af0e8573ae1aa3022d5939a63a24b8dd9ad758adfb97a19c06956
+    name: isecl-controller
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.0.0-Beta/isecl-controller-v5.0.0.tgz
+    version: v5.0.0
   - apiVersion: v2
     appVersion: v4.2.0
     created: "2022-03-30T03:20:38.200064719-07:00"
@@ -830,18 +1543,32 @@ entries:
   isecl-scheduler:
   - apiVersion: v2
     appVersion: v5.1.0
-    created: "2022-09-10T11:20:38.401935607-07:00"
+    created: "2022-12-26T02:59:49.425136115-08:00"
     dependencies:
     - name: factory
       repository: file://../../lib/factory/
       version: 5.1.0
     description: A Helm chart for Installing ISecL-DC Extended Scheduler
-    digest: 48cd5ca275eca03de01b289738500e5216960e1de4ca31d8d7e4ecec695f697f
+    digest: dadef02d1a804c77e65e4446e5b7532fc00856b4313a393e3b108ae892a30082
     name: isecl-scheduler
     type: application
     urls:
     - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/isecl-scheduler-v5.1.0.tgz
     version: v5.1.0
+  - apiVersion: v2
+    appVersion: v5.0.0
+    created: "2022-09-10T11:20:38.401935607-07:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.0.0
+    description: A Helm chart for Installing ISecL-DC Extended Scheduler
+    digest: 48cd5ca275eca03de01b289738500e5216960e1de4ca31d8d7e4ecec695f697f
+    name: isecl-scheduler
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.0.0-Beta/isecl-scheduler-v5.0.0.tgz
+    version: v5.0.0
   - apiVersion: v2
     appVersion: v4.2.0
     created: "2022-03-30T03:20:38.200958547-07:00"
@@ -859,33 +1586,61 @@ entries:
   kbs:
   - apiVersion: v2
     appVersion: v5.1.0
-    created: "2022-09-10T11:20:38.406887384-07:00"
+    created: "2022-12-26T02:59:49.426376654-08:00"
     dependencies:
     - name: factory
       repository: file://../../lib/factory/
       version: 5.1.0
     description: A Helm chart for Installing ISecL-DC Key Broker Service
-    digest: 04ea27bbc15ceaa56e29d700d23fd31d132a0f67d88f1f5964aba5a3a4bdca2b
+    digest: 8eb61cab105034db110f48da93b33c479699a372ddac6407bb6054e1bf26050f
     name: kbs
     type: application
     urls:
     - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/kbs-v5.1.0.tgz
     version: v5.1.0
+  - apiVersion: v2
+    appVersion: v5.0.0
+    created: "2022-09-10T11:20:38.406887384-07:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.0.0
+    description: A Helm chart for Installing ISecL-DC Key Broker Service
+    digest: 04ea27bbc15ceaa56e29d700d23fd31d132a0f67d88f1f5964aba5a3a4bdca2b
+    name: kbs
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.0.0-Beta/kbs-v5.0.0.tgz
+    version: v5.0.0
   nats:
   - apiVersion: v2
     appVersion: v5.1.0
-    created: "2022-09-10T11:20:38.413269931-07:00"
+    created: "2022-12-26T02:59:49.428334842-08:00"
     dependencies:
     - name: factory
       repository: file://../../lib/factory/
       version: 5.1.0
     description: A Helm chart for Installing NATS server
-    digest: b71bfa4b6c861fb80d7952000231c06cbd94dfd5cc25a41310d8d75a9fc5301a
+    digest: 3c8e5ab52918631b879c5d9539acdcfebc2fa79abec349ec463bf7f6164aed27
     name: nats
     type: application
     urls:
     - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/nats-v5.1.0.tgz
     version: v5.1.0
+  - apiVersion: v2
+    appVersion: v5.0.0
+    created: "2022-09-10T11:20:38.413269931-07:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.0.0
+    description: A Helm chart for Installing NATS server
+    digest: b71bfa4b6c861fb80d7952000231c06cbd94dfd5cc25a41310d8d75a9fc5301a
+    name: nats
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.0.0-Beta/nats-v5.0.0.tgz
+    version: v5.0.0
   - apiVersion: v2
     appVersion: v4.2.0
     created: "2022-03-30T03:20:38.201805821-07:00"
@@ -903,19 +1658,34 @@ entries:
   nats-init:
   - apiVersion: v2
     appVersion: v5.1.0
-    created: "2022-09-10T11:20:38.410153558-07:00"
+    created: "2022-12-26T02:59:49.427368903-08:00"
     dependencies:
     - name: factory
       repository: file://../../lib/factory/
       version: 5.1.0
     description: A Helm chart for creating TLS certificates and updating config for
       NATS
-    digest: 45d57c08415c3c6aa9cc61d443d71f25af11c0cd41f954be8038013e891eef84
+    digest: b18558e3f7b2ba12a33b215ea4a4af6836ccae56c8c89c27dc257fbead92b54b
     name: nats-init
     type: application
     urls:
     - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/nats-init-v5.1.0.tgz
     version: v5.1.0
+  - apiVersion: v2
+    appVersion: v5.0.0
+    created: "2022-09-10T11:20:38.410153558-07:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.0.0
+    description: A Helm chart for creating TLS certificates and updating config for
+      NATS
+    digest: 45d57c08415c3c6aa9cc61d443d71f25af11c0cd41f954be8038013e891eef84
+    name: nats-init
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.0.0-Beta/nats-init-v5.0.0.tgz
+    version: v5.0.0
   - apiVersion: v2
     appVersion: v4.2.0
     created: "2022-03-30T03:20:38.202643597-07:00"
@@ -931,21 +1701,140 @@ entries:
     urls:
     - https://github.com/intel-secl/helm-charts/releases/download/v4.2.0-Beta/nats-init-4.2.0.tgz
     version: 4.2.0
+  sagent:
+  - apiVersion: v2
+    appVersion: v5.1.0
+    created: "2022-12-26T02:59:49.431015191-08:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.1.0
+    description: A Helm chart for Installing sgx-agent
+    digest: fe59753945ec67600e0b5f7e99dea9a4a051fde200206cf40159f19f84f1cfbc
+    name: sagent
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/sagent-v5.1.0.tgz
+    version: v5.1.0
+  sagent-aas-manager:
+  - apiVersion: v2
+    appVersion: v5.1.0
+    created: "2022-12-26T02:59:49.429260195-08:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.1.0
+    description: A Helm chart for creating SGX agent service account
+    digest: 50aa2db95f13bbd1f0177cac7ca030db0985a78d325377071be3a96a0f992470
+    name: sagent-aas-manager
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/sagent-aas-manager-v5.1.0.tgz
+    version: v5.1.0
+  scs:
+  - apiVersion: v2
+    appVersion: v5.1.0
+    created: "2022-12-26T02:59:49.432743177-08:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.1.0
+    description: A Helm chart for Installing ISecL-DC scs Service
+    digest: 1af3486e7a8b9d82993965b95ff9bdfd6d44636a2b30baf97b6498bc730b9082
+    name: scs
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/scs-v5.1.0.tgz
+    version: v5.1.0
+  scsdb-cert-generator:
+  - apiVersion: v2
+    appVersion: v5.1.0
+    created: "2022-12-26T02:59:49.433657039-08:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.1.0
+    description: A Helm chart for generating tls certs for database deployments
+    digest: e920bc21f29e25b675f480225df913585ca72c528cee24a0e58386e1128025e4
+    name: scsdb-cert-generator
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/scsdb-cert-generator-v5.1.0.tgz
+    version: v5.1.0
+  shvs:
+  - apiVersion: v2
+    appVersion: v5.1.0
+    created: "2022-12-26T02:59:49.435088646-08:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.1.0
+    description: A Helm chart for Installing ISecL-DC SGX Host Verification Service
+    digest: 68fbebd4710ab32f9bcaf7a44ead1468f4e1112b337e50a428bf6961bbc80ed1
+    name: shvs
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/shvs-v5.1.0.tgz
+    version: v5.1.0
+  shvsdb-cert-generator:
+  - apiVersion: v2
+    appVersion: v5.1.0
+    created: "2022-12-26T02:59:49.435921706-08:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.1.0
+    description: A Helm chart for generating tls certs for database deployments
+    digest: 429fc0c387fe7282524ebc397c55affbc800e96348db4f4f81d3b12a25068044
+    name: shvsdb-cert-generator
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/shvsdb-cert-generator-v5.1.0.tgz
+    version: v5.1.0
+  sqvs:
+  - apiVersion: v2
+    appVersion: v5.1.0
+    created: "2022-12-26T02:59:49.437190036-08:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.1.0
+    description: A Helm chart for Installing ISecL-DC SGX Verification Service
+    digest: 8b8c6e099896f020c69945af80707df5b08d1d0d2718bd20783bb5911f63ea88
+    name: sqvs
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/sqvs-v5.1.0.tgz
+    version: v5.1.0
   trustagent:
   - apiVersion: v2
     appVersion: v5.1.0
-    created: "2022-09-10T11:20:38.41823491-07:00"
+    created: "2022-12-26T02:59:49.439327152-08:00"
     dependencies:
     - name: factory
       repository: file://../../lib/factory/
       version: 5.1.0
     description: A Helm chart for Installing ISecL-DC Trust Agent
-    digest: fe2e9e89a5862de28a618315247312f195dbaaeaaf061242e39b62edafeca781
+    digest: 45e7f00c34943cd20d4d6f6bc59b5df06a9fe23220e0fafa8cedf5d67284aa56
     name: trustagent
     type: application
     urls:
     - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/trustagent-v5.1.0.tgz
     version: v5.1.0
+  - apiVersion: v2
+    appVersion: v5.0.0
+    created: "2022-09-10T11:20:38.41823491-07:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.0.0
+    description: A Helm chart for Installing ISecL-DC Trust Agent
+    digest: fe2e9e89a5862de28a618315247312f195dbaaeaaf061242e39b62edafeca781
+    name: trustagent
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.0.0-Beta/trustagent-v5.0.0.tgz
+    version: v5.0.0
   - apiVersion: v2
     appVersion: v4.2.0
     created: "2022-03-30T03:20:38.203581146-07:00"
@@ -963,61 +1852,117 @@ entries:
   trustagent-aas-manager:
   - apiVersion: v2
     appVersion: v5.1.0
-    created: "2022-09-10T11:20:38.415388052-07:00"
+    created: "2022-12-26T02:59:49.438127953-08:00"
     dependencies:
     - name: factory
       repository: file://../../lib/factory/
       version: 5.1.0
     description: A Helm chart for creating Trust agent service account
-    digest: 1ea203a2c0c1018cffbaf319ec50f9d29d1929669f26b6e950e1d209b69118aa
+    digest: bb0e230feba717f7cb5ade09875028a39f96cd6912a82d3389bc8f41931aa3b6
     name: trustagent-aas-manager
     type: application
     urls:
     - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/trustagent-aas-manager-v5.1.0.tgz
     version: v5.1.0
+  - apiVersion: v2
+    appVersion: v5.0.0
+    created: "2022-09-10T11:20:38.415388052-07:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.0.0
+    description: A Helm chart for creating Trust agent service account
+    digest: 1ea203a2c0c1018cffbaf319ec50f9d29d1929669f26b6e950e1d209b69118aa
+    name: trustagent-aas-manager
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.0.0-Beta/trustagent-aas-manager-v5.0.0.tgz
+    version: v5.0.0
   wls:
   - apiVersion: v2
     appVersion: v5.1.0
-    created: "2022-09-10T11:20:38.420817984-07:00"
+    created: "2022-12-26T02:59:49.440512547-08:00"
     dependencies:
     - name: factory
       repository: file://../../lib/factory/
       version: 5.1.0
     description: A Helm chart for Installing ISecL-DC Workload Service
-    digest: 78b7aef9f8e4d8cacf0380a667ef325defa77c781c8a7c433a8186d2f33c5a07
+    digest: 65b7b67fb76fe6b353f02158acad4bfbe7c34c731d6c30fca8b348c1ae5c9702
     name: wls
     type: application
     urls:
     - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/wls-v5.1.0.tgz
     version: v5.1.0
+  - apiVersion: v2
+    appVersion: v5.0.0
+    created: "2022-09-10T11:20:38.420817984-07:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.0.0
+    description: A Helm chart for Installing ISecL-DC Workload Service
+    digest: 78b7aef9f8e4d8cacf0380a667ef325defa77c781c8a7c433a8186d2f33c5a07
+    name: wls
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.0.0-Beta/wls-v5.0.0.tgz
+    version: v5.0.0
   workload-agent:
   - apiVersion: v2
     appVersion: v5.1.0
-    created: "2022-09-10T11:20:38.423923578-07:00"
+    created: "2022-12-26T02:59:49.441600178-08:00"
     dependencies:
     - name: factory
       repository: file://../../lib/factory/
       version: 5.1.0
     description: A Helm chart for Installing ISecL-DC Workload Agent
-    digest: 30d9fd460ebc7d90ef3b3527216da66c72a2d90cd8e68ab83c20e99f21708378
+    digest: 3f2df0bd830e6cd4dc796374bc8523c54cdd1427fefba02c33c38e7fe6d88f07
     name: workload-agent
     type: application
     urls:
     - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/workload-agent-v5.1.0.tgz
     version: v5.1.0
+  - apiVersion: v2
+    appVersion: v5.0.0
+    created: "2022-09-10T11:20:38.423923578-07:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.0.0
+    description: A Helm chart for Installing ISecL-DC Workload Agent
+    digest: 30d9fd460ebc7d90ef3b3527216da66c72a2d90cd8e68ab83c20e99f21708378
+    name: workload-agent
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.0.0-Beta/workload-agent-v5.0.0.tgz
+    version: v5.0.0
   wpm:
   - apiVersion: v2
     appVersion: v5.1.0
-    created: "2022-09-10T11:20:38.42742508-07:00"
+    created: "2022-12-26T02:59:49.443047501-08:00"
     dependencies:
     - name: factory
       repository: file://../../lib/factory/
       version: 5.1.0
     description: A Helm chart for creating Workload Policy Manager service account
-    digest: a34c6d311c8f11c33e2f56eba3ae2f95dd4f5fcdbac1620f33008baae7f7fed5
+    digest: f37a2aad6b643f01912d773cd609b9bcb6132d5cb70f0e2139723430d1baf879
     name: wpm
     type: application
     urls:
     - https://github.com/intel-secl/helm-charts/releases/download/v5.1.0/wpm-v5.1.0.tgz
     version: v5.1.0
-generated: "2022-09-10T11:20:38.176617859-07:00"
+  - apiVersion: v2
+    appVersion: v5.0.0
+    created: "2022-09-10T11:20:38.42742508-07:00"
+    dependencies:
+    - name: factory
+      repository: file://../../lib/factory/
+      version: 5.0.0
+    description: A Helm chart for creating Workload Policy Manager service account
+    digest: a34c6d311c8f11c33e2f56eba3ae2f95dd4f5fcdbac1620f33008baae7f7fed5
+    name: wpm
+    type: application
+    urls:
+    - https://github.com/intel-secl/helm-charts/releases/download/v5.0.0-Beta/wpm-v5.0.0.tgz
+    version: v5.0.0
+generated: "2022-12-26T02:59:49.225084842-08:00"
