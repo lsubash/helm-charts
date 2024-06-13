@@ -1,9 +1,9 @@
 {{- include "factory.headers" . }}
 ---
 {{- include "factory.pvcLogsCommonSpec" . }}
-  storageClassName: nfs
+  storageClassName: manual
   accessModes:
-    - {{ .Values.storage.nfs.accessModes }}
+    - {{ .Values.storage.hostPath.accessModes }}
   resources:
     requests:
-      storage: {{ .Values.storage.nfs.logsSize }}
+      storage: {{ .Values.storage.hostPath.logsSize }}
