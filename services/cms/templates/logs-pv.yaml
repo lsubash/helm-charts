@@ -3,12 +3,12 @@
 ---
 {{ include "factory.pvLogsCommonSpec" . }}
   storageClassName: manual
-  nfs:
+  hostPath:
     path: {{ .Values.global.storage.hostPath.path }}/isecl/cms/logs
 {{- else }}
 ---
 {{ include "factory.pvLogsCommonSpec" . }}
   storageClassName: manual
-  nfs:
+  hostPath:
     path: {{ .Values.storage.hostPath.path }}/isecl/cms/logs
 {{- end }}

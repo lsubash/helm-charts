@@ -9,6 +9,6 @@
 ---
 {{ include "factory.pvConfigCommonSpec" . }}
   storageClassName: manual
-  nfs:
+  hostPath:
     path: {{ .Values.storage.hostPath.path }}/isecl/cms/config
 {{- end }}
